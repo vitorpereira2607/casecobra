@@ -19,9 +19,6 @@ const HeroSection = () => {
   const mainImageSrc = "/your-image.png";
   const lineImageSrc = "/line.png";
   const phoneImageSrc = "/testimonials/1.jpg";
-  const startCount = 5;
-
-  console.log(startCount)
 
   return (
     <section>
@@ -62,7 +59,9 @@ const HeroSection = () => {
                 ))}
               </div>
               <div className='flex flex-col justify-between items-center sm:items-start'>
-                <Star count={5} />
+                <div className='flex gap-0.5'>
+                  <Star count={5} />
+                </div>
               </div>
               <p>
                 <span className='font-semibold'>1.250</span> happy customers
