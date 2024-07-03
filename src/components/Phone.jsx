@@ -3,7 +3,7 @@ import React from 'react'
 
 const Phone = ({ className, imgSrc, dark = false, ...props }) => {
     return (
-        <div className={cn("relative pointer-events-none z-50 overflow-hidden", className)} {...props}>
+        <div className={cn("relative pointer-events-none z-50 overflow-hidden rounded-40", className)} {...props}>
             <img
                 src={
                     dark

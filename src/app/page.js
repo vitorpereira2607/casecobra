@@ -1,13 +1,13 @@
 import HeroSection from "@/components/HeroSection";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ReviewsSection from "@/components/ReviewsSection";
-import { Check } from "lucide-react";
+import CustomCasePromoSection from "@/components/CustomCasePromoSection";
 
 export default function Home() {
   return (
     <div className="bg-slate-50">
       <HeroSection />
-      <ReviewsSection />
+      <ReviewsSection />   
+      <CustomCasePromoSection />
     </div>
   );
 }

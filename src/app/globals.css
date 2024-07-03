@@ -47,6 +47,10 @@
       --input: 240 3.7% 15.9%;
       --ring: 142.4 71.8% 29.2%;
     }
+
+    .rounded-40 {
+      border-radius: 40px;
+    }
   }
 
   @layer base {

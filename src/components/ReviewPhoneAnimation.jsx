@@ -30,12 +30,7 @@ function splitArray(array, numParts) {
   return result;
 }
 
-function ReviewColumn({
-  reviews,
-  className,
-  reviewClassName,
-  msPerPixel = 0,
-}) {
+function ReviewColumn({ reviews, className, reviewClassName, msPerPixel = 0}) {
   const columnRef = useRef(null);
   const [columnHeight, setColumnHeight] = useState(0);
   const duration = `${columnHeight * msPerPixel}ms`;
