@@ -12,7 +12,6 @@ import ReviewPhoneAnimation from './ReviewPhoneAnimation';
 
 const ReviewsSection = () => {
   return (
-
     <section className="bg-slate-100 py-24">
       <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
@@ -74,23 +73,10 @@ const ReviewsSection = () => {
             </div>
           </div>
         </div>
-
       </MaxWidthWrapper>
 
-      {/* Review Grid */}
-
-      <div className="pt-16">
-        <MaxWidthWrapper className="relative max-w-5xl">
-          <img
-            aria-hidden="true"
-            src='/what-people-are-buying.png'
-            className="absolute select-none hidden xl:block -left-32 top-1/3"
-          />
-
-          <ReviewPhoneAnimation />
-
-        </MaxWidthWrapper>
-      </div>
+      <ReviewPhoneAnimation />
+      
     </section>
   )
 }
