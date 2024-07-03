@@ -1,7 +1,7 @@
 import React from 'react'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Check } from "lucide-react";
-import Phone from "@/components/Phone";
+import Phone from './Phone';
 import PhoneSection from './PhoneSection';
 import Star from './Star';
 

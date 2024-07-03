@@ -1,25 +1,18 @@
 "use client"
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import { Icons } from "@/components/Icons";
 import Star from './Star';
 import { Check } from 'lucide-react';
 import { useInView } from 'framer-motion';
-
-
-function ReviewGrid() {
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { once: true, amount: 0.4 })
-
-  return <div ref={containerRef} className='relative -mx-4 grid h-[49rem] max-h-[150vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 sm:mt-20 md:grid-cols-2 lg:grid-cols-3'>
-
-  </div>
-
-}
+import { cn } from '@/lib/utils';
+import Phone from './Phone';
+import ReviewPhoneAnimation from './ReviewPhoneAnimation';
 
 const ReviewsSection = () => {
   return (
+
     <section className="bg-slate-100 py-24">
       <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
@@ -28,9 +21,6 @@ const ReviewsSection = () => {
           </h2>
           <img src="/snake-2.png" className="w-24 order-0 lg:order-2" />
         </div>
-
-
-        {/* Reviews */}
 
         <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
           <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
@@ -85,8 +75,9 @@ const ReviewsSection = () => {
           </div>
         </div>
 
-
       </MaxWidthWrapper>
+
+      {/* Review Grid */}
 
       <div className="pt-16">
         <MaxWidthWrapper className="relative max-w-5xl">
@@ -96,7 +87,7 @@ const ReviewsSection = () => {
             className="absolute select-none hidden xl:block -left-32 top-1/3"
           />
 
-          <ReviewGrid />
+          <ReviewPhoneAnimation />
 
         </MaxWidthWrapper>
       </div>
