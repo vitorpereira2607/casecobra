@@ -38,7 +38,6 @@ const HeroSection = () => {
             x: 0,
             transition: {
               duration: 1.3,
-              delay: 0.8,
               ease: "easeInOut"
             }
           }}
@@ -98,7 +97,7 @@ const HeroSection = () => {
           whileInView={{
             opacity: 1, x: 0, transition: {
               duration: 1.3,
-              delay: 1.3,
+              delay: 0.4,
               ease: "easeInOut"
             }
           }}>

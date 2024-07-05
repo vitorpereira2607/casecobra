@@ -24,8 +24,8 @@ const ReviewsSection = () => {
             opacity: 1,
             y: 0,
             transition: {
-              duration: 0.5,
-              delay: 0.5,
+              duration: 0.8,
+              delay: 0.2,
               ease: "easeInOut"
             }
           }}
@@ -45,7 +45,7 @@ const ReviewsSection = () => {
           opacity: 1,
           x: 0,
           transition: {
-            duration: 0.8,
+            duration: 1,
             delay: 0.5,
             ease: "easeInOut"
           }
@@ -84,7 +84,7 @@ const ReviewsSection = () => {
                   opacity: 1,
                   x: 0,
                   transition: {
-                    duration: 0.8,
+                    duration: 1,
                     delay: 0.5,
                     ease: "easeInOut"
                   }

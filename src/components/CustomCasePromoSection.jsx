@@ -16,31 +16,31 @@ const CustomCasePromoSection = () => {
   return (
     <section>
         <MaxWidthWrapper className="py-24">
-          <motion.div 
-          initial="hidden"
-          variants={fadeInTopVariant}
-          animate={controls}
-          className='mb-12 px-6 lg:px-8'
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.7,
-              delay: 0.4,
-              ease: "easeInOut"
-            }
-          }}
-          >
-            <div className='mx-auto max-w-2xl sm:text-center'>
+          <div className='mb-12 px-6 lg:px-8'>
+            <motion.div 
+            initial="hidden"
+            variants={fadeInTopVariant}
+            animate={controls}
+            className='mx-auto max-w-2xl sm:text-center'
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.8,
+                delay: 0.2,
+                ease: "easeInOut"
+              }
+            }}
+            >
               <h2 className='order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900'>
                 Upload your photo and get{' '}
                 <span className='relative px-2 bg-green-600 text-white'>
-                  your own caseeeeeeee
+                  your own case
                 </span>{' '}
                 now
               </h2>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           <div className='mx-auto max-w-6xl px-6 lg:px-8'>
             <div className='relative flex flex-col items-center md:grid grid-cols-2 gap-40' >

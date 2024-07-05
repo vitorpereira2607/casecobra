@@ -26,7 +26,7 @@ export const fadeInLeftVariant = {
 export const fadeInTopVariant = {
     hidden: {
       opacity: 0,
-      y: '-20%'
+      y: '-100%'
     },
     visible: {
       opacity: 1,
