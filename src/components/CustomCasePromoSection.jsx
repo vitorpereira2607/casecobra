@@ -1,15 +1,36 @@
+'use client'
 import React from 'react'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import { motion } from 'framer-motion';
+import { fadeInTopVariant } from './animations/animations';
+import { useAnimation } from 'framer-motion';
 
 const CustomCasePromoSection = () => {
+
+  const controls = useAnimation()
+
   return (
     <section>
         <MaxWidthWrapper className="py-24">
-          <div className='mb-12 px-6 lg:px-8'>
+          <motion.div 
+          initial="hidden"
+          variants={fadeInTopVariant}
+          animate={controls}
+          className='mb-12 px-6 lg:px-8'
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.7,
+              delay: 0.4,
+              ease: "easeInOut"
+            }
+          }}
+          >
             <div className='mx-auto max-w-2xl sm:text-center'>
               <h2 className='order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900'>
                 Upload your photo and get{' '}
@@ -19,7 +40,7 @@ const CustomCasePromoSection = () => {
                 now
               </h2>
             </div>
-          </div>
+          </motion.div>
 
           <div className='mx-auto max-w-6xl px-6 lg:px-8'>
             <div className='relative flex flex-col items-center md:grid grid-cols-2 gap-40' >

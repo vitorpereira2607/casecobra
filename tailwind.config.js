@@ -1,3 +1,5 @@
+const { transform } = require('next/dist/build/swc');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -5,7 +7,7 @@ module.exports = {
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
     './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    './src/**/*.{js,jsx}',  // <- Comma added here
   ],
   prefix: "",
   theme: {
@@ -66,6 +68,23 @@ module.exports = {
             opacity: '1',
           },
         },
+        'fade-in-left': {
+          '0%': { opacity: '0', transform: 'translateX(-20%)'},
+          '100%': { opacity: '1', transform: 'translateX(0)'},    
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(20%)'},
+          '100%': { opacity: '1', transform: 'translateX(0)'},    
+        },
+
+        "text-reveal": {
+          "0%": {
+            transform: "translate(0, 100%)",
+          },
+          "100%": {
+            transform: "translate(0, 0)",
+          },
+        }, 
         marquee: {
           '100%': {
             transform: 'translateY(-50%)',
@@ -75,8 +94,11 @@ module.exports = {
       animation: {
         marquee: 'marquee var(--marquee-duration) linear infinite',
         'fade-in': 'fade-in 0.5s linear forwards',
+        'fade-in-left': 'fade-in-left var(--animation-duration) var(--animation-delay) ease-out forwards',
+        'fade-in-right': 'fade-in-right var(--animation-duration) var(--animation-delay) ease-out forwards',
+        "text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",  
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

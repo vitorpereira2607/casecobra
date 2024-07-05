@@ -2,8 +2,8 @@
 import React from 'react';
 import Phone from './Phone';
 
-const PhoneSection = ({ mainImageSrc, lineImageSrc, phoneImageSrc }) => (
-  <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
+const PhoneSection = ({ mainImageSrc, lineImageSrc, phoneImageSrc, className, style }) => (
+  <div className={`col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit ${className}`} style={style}>
     <div className="relative md:max-w-xl">
       <img
         src={mainImageSrc}
