@@ -1,5 +1,3 @@
-// components/PhoneSection.js
-import React from 'react';
 import Phone from './Phone';
 
 const PhoneSection = ({ mainImageSrc, lineImageSrc, phoneImageSrc, className, style }) => (

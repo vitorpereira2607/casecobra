@@ -1,12 +1,10 @@
 'use client'
-import React from 'react'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { motion, useAnimation } from 'framer-motion';
 import { Check } from "lucide-react";
-import Phone from './Phone';
+import { fadeInLeftVariant, fadeInRightVariant } from './animations/animations';
 import PhoneSection from './PhoneSection';
 import Star from './Star';
-import { motion, useAnimation } from 'framer-motion';
-import { fadeInLeftVariant, fadeInRightVariant } from './animations/animations';
 
 const HeroSection = () => {
   const heroImageSrc = "/snake-1.png";

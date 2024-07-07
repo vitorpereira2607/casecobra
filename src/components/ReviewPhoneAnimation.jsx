@@ -1,9 +1,9 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react'
-import MaxWidthWrapper from './MaxWidthWrapper'
-import { useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { useInView } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import MaxWidthWrapper from './MaxWidthWrapper';
 import Phone from './Phone';
 
 const PHONES = [

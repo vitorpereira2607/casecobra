@@ -1,13 +1,11 @@
 'use client'
-import React from 'react'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { Check, ArrowRight } from "lucide-react";
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 import { fadeInTopVariant } from './animations/animations';
-import { useAnimation } from 'framer-motion';
 
 const CustomCasePromoSection = () => {
 

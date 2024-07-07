@@ -1,13 +1,11 @@
 'use client'
-import React from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import MaxWidthWrapper from './MaxWidthWrapper';
 import { Icons } from "@/components/Icons";
-import Star from './Star';
+import { motion, useAnimation } from 'framer-motion';
 import { Check } from 'lucide-react';
-import Phone from './Phone';
+import MaxWidthWrapper from './MaxWidthWrapper';
 import ReviewPhoneAnimation from './ReviewPhoneAnimation';
-import { fadeInTopVariant, fadeInLeftVariant } from './animations/animations';
+import Star from './Star';
+import { fadeInLeftVariant, fadeInTopVariant } from './animations/animations';
 
 const ReviewsSection = () => {
 

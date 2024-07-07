@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useTransition } from "react";
-import { cn } from "@/lib/utils";
-import Dropzone, { FileRejection } from "react-dropzone";
-import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
+import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
+import { useState, useTransition } from "react";
+import Dropzone from "react-dropzone";
 
 const Page = () => {
 

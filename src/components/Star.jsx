@@ -1,4 +1,3 @@
-import React from 'react'
 import { Star as LucideStar } from "lucide-react";
 
 const Star = ({ count = 5 }) => {
