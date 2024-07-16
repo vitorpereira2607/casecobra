@@ -5,19 +5,74 @@ import { cn } from "@/lib/utils";
 import { Image, Loader2, MousePointerSquareDashed } from "lucide-react";
 import { useState, useTransition } from "react";
 import Dropzone from "react-dropzone";
+import axios from "axios";
+import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+
 
 const Page = () => {
+
+    const api = process.env.NEXT_API_URL || '';
+    const { toast } = useToast()
 
     const [isDragOver, setIsDragOver] = useState(false);
     const [uploadProgress, setUploadProgress] = useState(0);
     const [isPending, startTransition] = useTransition();
+    const [isUploading, setIsUploading] = useState(false);
 
-    const isUploading = false;
-    const onDropRejected = () => {
-        console.log("rejected")
+    const onDropRejected = (files) => {
+
+        const [file] = files
+
+        setIsDragOver(false)
+
+        toast({
+            variant: "primary",
+            title: "Uh oh! Something went wrong.",
+            description: "Error uploading file.",
+            action: <ToastAction altText="Try again">Try again</ToastAction>,
+        })
     }
-    const onDropAccepted = () => {
-        console.log("accepted")
+    const onDropAccepted = async (files) => {
+        const file = files[0];
+
+        setIsUploading(true);
+        setUploadProgress(0);
+
+        try {
+
+            const { name, type } = file;
+
+            const response = await axios.post(`${api}/uploads`, {
+                name,
+                contentType: type
+            })
+
+            if (response.status !== 201) {
+                throw new Error('Failed to get signed URL');
+            }
+
+            const { signedUrl } = response.data;
+
+            await axios.put(signedUrl, file, {
+                headers: {
+                    'Content-Type': type,
+                },
+                onUploadProgress: (progressEvent) => {
+                    const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                    setUploadProgress(progress);
+                }
+            })
+
+            toast({
+                description: "File upload sucessfully!",
+            })
+            
+        } catch (error) {
+            console.error('Error uploading file!', error);
+        } finally {
+            setIsUploading(false)
+        }
     }
 
     return (
